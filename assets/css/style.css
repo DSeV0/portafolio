@@ -294,3 +294,27 @@ a {
         grid-template-columns: 1fr; /* Pasa a 1 columna en pantallas pequeñas */
     }
 }
+
+
+/* --- Footer --- */
+.site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Línea sutil superior */
+    padding: 30px 0;
+    margin-top: 40px; /* Separación con el contenido de arriba */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center; /* Centra los enlaces horizontalmente */
+    gap: 40px; /* Separación entre "GitHub" y "LinkedIn" */
+}
+
+.footer-content a {
+    font-size: 18px; /* Tamaño un poco más pequeño que los párrafos */
+    color: var(--text-muted); /* Usamos el gris claro para que no compita con el contenido principal */
+    transition: color 0.3s ease;
+}
+
+.footer-content a:hover {
+    color: var(--primary-color); /* Al pasar el mouse, brillan con tu verde característico */
+}
