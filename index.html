@@ -1,24 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matías Menares | Desarrollador Web</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Matías Menares</title>
 </head>
 <body>
-    <section class="pelao">
-    <h1>test de links</h1>
-    <p class="doble">alo ola q tal</p>
-    </section>
-    <button id="duplicarBtn">Duplicar texto</button>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">Matías Menares</a>
+            </div>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="#sobre-mi">Sobre Mi</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+<!--Sección de Presentación-->
+        <section id="home" class="hero-section container">
+            <div class="hero-image">
+                    <img src="assets/img/gato.png" alt="Matías Menares" class="profile-pic">
+            </div>
+            <div class="hero-text">
+                <h1>Matías Menares</h1>
+                <h2 class="subtitle">Desarrollador Web</h2>
+                <p>Hola, soy Matías, Desarrollador y Diseñador Web, enfocado mayormente en el área de programación y buscando aprender nuevas tecnologías que me permitan crecer profesionalmente y acercarme a mis objetivos profesionales y personales.</p>
+                <div class="hero-buttons">
+                    <a href="#sobre-mi" class="btn btn-primary">Sobre Mi</a>
+                    <a href="ruta-a-tu-cv.pdf" class="btn btn-secondary" download>Descargar CV</a>
+                </div>
+            </div>
+        </section>
 
 
 
 
+<!--Sección de Tecnologías-->
+        <section id="tecnologias" class="tech-section container">
+            <h2 class="section-title">Tecnologías</h2>
+            
+            <div class="tech-cards-container">
+                
+                <div class="tech-card">
+                    <h3>Programación</h3>
+                    <div class="tech-grid">
+                        <img src="assets/img/iconos/html.png" alt="HTML5" class="tech-icon">
+                        <img src="assets/img/iconos/css.png" alt="CSS3" class="tech-icon">
+                        <img src="assets/img/iconos/js.png" alt="JavaScript" class="tech-icon">
+                        <img src="assets/img/iconos/php.png" alt="PHP" class="tech-icon">
+                        <img src="assets/img/iconos/bootstrap.png" alt="Bootstrap" class="tech-icon">
+                        <img src="assets/img/iconos/wordpress.png" alt="WordPress" class="tech-icon">
+                    </div>
+                    
+                    <h3 class="sub-title">En Desarrollo</h3>
+                    <div class="tech-grid sub-grid">
+                        <img src="assets/img/iconos/tailwind.png" alt="Tailwind CSS" class="tech-icon">
+                        <img src="assets/img/iconos/python.png" alt="Python" class="tech-icon">
+                    </div>
+                </div>
+                <div class="tech-card align-center-content">
+                    <h3>Desarrollo y<br>Productividad</h3>
+                    <div class="tech-grid">
+                        <img src="assets/img/iconos/figma.png" alt="Figma" class="tech-icon">
+                        <img src="assets/img/iconos/vscode.png" alt="VS Code" class="tech-icon">
+                        <img src="assets/img/iconos/github.png" alt="GitHub" class="tech-icon">
+                    </div>
+                </div>
+            </div>
+        </section>
+<!--Sección de Trabajos-->
+<section id="proyectos" class="works-section container">
+            <h2 class="section-title text-center">Trabajos</h2>
+            
+            <div class="works-grid">
+                <article class="work-card">
+                    <img src="assets/img/proyectos/pelixplus.png" alt="Interfaz de plataforma web para visualización de películas" class="work-img">
+                </article>
 
+                <article class="work-card">
+                    <img src="assets/img/proyectos/andrecicla.png" alt="E-commerce AndreCicla para venta de artesanías y decoraciones recicladas" class="work-img">
+                </article>
+            </div>
 
+            <div class="works-action">
+                <a href="#" class="btn btn-primary">Ver Más</a>
+            </div>
+        </section>
 
+        </main>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

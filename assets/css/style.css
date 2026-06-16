@@ -1,13 +1,296 @@
-h1 {
-    color: purple;
-    font-size: 50px;
-    font-family: 'Cursive', sans-serif;
+/* --- Variables Globales --- */
+:root {
+    --bg-color: #0F172A;
+    --primary-color: #97E028;
+    --text-light: #FFFFFF;
+    --text-muted: #CBD5E1; /* Gris claro para los párrafos */
+    --card-bg: #0A193B; /* Un tono ligeramente más claro para las tarjetas de tecnologías */
+    --btn-secondary-bg: #E2E8F0;
+    --btn-secondary-text: #0F172A;
+    
+    --font-main: system-ui, -apple-system, sans-serif; /* Puedes cambiarla por la fuente de Google Fonts que estés usando */
+}
+
+/* --- Reset y Estilos Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    font-family: var(--font-main);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+}
+
+/* Contenedor principal para centrar el contenido */
+.container {
+    max-width: 1440px;
+    width: 92%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header y Navegación --- */
+.site-header {
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Línea sutil como en el diseño */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    font-size: 24px;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary-color);
+}
+
+/* --- Sección Hero --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    min-height: 80vh;
+    padding: 60px 20px;
+}
+
+.hero-image {
+    width: 500px;
+    height: 400px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    background-color: #D9D9D9;
+    overflow: hidden;
+    position: relative;
+}
+.hero.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.image-placeholder {
+    display: none;
+}
+
+.profile-pic {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.hero-text .subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+/* --- Botones --- */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 25px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    font-size: 24px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--bg-color); /* Texto oscuro para el botón verde */
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+}
+
+
+
+/* --- Sección Tecnologías --- */
+.tech-section {
+    padding: 80px 20px; /* Margen superior e inferior para separar del Hero */
+}
+
+.section-title {
+    font-size: 32px; /* Un poco más pequeño que tu nombre (H1) para mantener jerarquía */
+    margin-bottom: 40px;
+    font-weight: 600;
     text-align: center;
 }
 
-p {
+/* Contenedor principal de las dos tarjetas */
+.tech-cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas del mismo ancho */
+    gap: 40px; /* Espacio entre las tarjetas */
+}
+
+/* Estilo individual de cada tarjeta oscura */
+.tech-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 50px 40px;
     text-align: center;
-    font-size: 20px;
-    color: rgba(39, 39, 39, 0.969);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Clase de apoyo para centrar verticalmente la segunda tarjeta */
+.align-center-content {
+    justify-content: center;
+}
+
+.tech-card h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.tech-card .sub-title {
+    font-size: 24px;
+    margin-top: 30px; /* Separación con los iconos de arriba */
+    margin-bottom: 20px;
+}
+
+/* Cuadrícula interna para los iconos */
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 320px; /* Este ancho fuerza a que entren máximo 3 iconos por fila */
+}
+
+/* Para la sección de "En Desarrollo" donde solo hay 2 iconos */
+.sub-grid {
+    max-width: 200px;
+}
+
+/* Estilo de los iconos */
+.tech-icon {
+    width: 75px; /* Tamaño del icono. Ajusta si los ves muy grandes o pequeños */
+    height: auto;
+    object-fit: contain; /* Evita que las imágenes se deformen */
+    transition: transform 0.3s ease; /* Transición suave para la animación */
+}
+
+/* Efecto hover: el icono sube ligeramente al pasar el cursor */
+.tech-icon:hover {
+    transform: translateY(-8px);
+}
+
+/* --- Responsive (Para móviles y tablets) --- */
+@media (max-width: 900px) {
+    .tech-cards-container {
+        grid-template-columns: 1fr; /* Pasa a 1 sola columna en pantallas pequeñas */
+    }
+}
+
+
+/* --- Sección Trabajos --- */
+.works-section {
+    padding: 80px 20px;
+}
+
+/* Clase de utilidad para centrar texto */
+.text-center {
+    text-align: center;
+}
+
+/* Cuadrícula de proyectos */
+.works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 40px; /* Separación entre las imágenes */
+    margin-bottom: 60px; /* Espacio antes del botón Ver Más */
+}
+
+/* Contenedor de cada imagen */
+.work-card {
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que la imagen respete los bordes redondeados */
+    background-color: var(--card-bg); /* Usa el mismo color de fondo sutil por si la imagen tarda en cargar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto hover sutil para los proyectos */
+.work-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen del proyecto */
+.work-img {
+    width: 100%;
+    height: auto;
+    display: block; /* Evita pequeños márgenes extraños debajo de las imágenes */
+    object-fit: cover;
+}
+
+/* Contenedor para centrar el botón */
+.works-action {
+    display: flex;
+    justify-content: center;
+}
+
+/* --- Responsive (Para móviles y tablets) --- */
+@media (max-width: 900px) {
+    .works-grid {
+        grid-template-columns: 1fr; /* Pasa a 1 columna en pantallas pequeñas */
+    }
 }
