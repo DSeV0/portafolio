@@ -1,5 +1,13 @@
 h1 {
     color: purple;
-    font-size: 150px;
+    font-size: 50px;
     font-family: 'Cursive', sans-serif;
+    align-items: center;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 20px;
+    color: rgba(39, 39, 39, 0.969);
 }
