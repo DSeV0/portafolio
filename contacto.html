@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Matías Menares</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <main>
+
+            <header class="site-header">
+    <div class="container header-content">
+        <div class="logo">
+            <a href="index.html">Matías Menares</a>
+        </div>
+        
+        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Abrir menú de navegación">
+            <span class="hamburger"></span>
+        </button>
+
+        <nav id="primary-menu" class="main-nav" aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre-mi.html">Sobre Mi</a></li>
+                <li><a href="proyectos.html">Proyectos</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+
+        <div class="container about-header">
+            <h1 class="page-title text-center">CONTACTO</h1>
+        </div>
+
+        <section class="container contact-section">
+            <div class="contact-grid">
+                
+                <div class="contact-info">
+                    <h2 class="contact-heading">¿Tienes algo en mente?<br>¡Hablemos!</h2>
+                    <p class="contact-text">
+                        Enviame un mensaje hablando sobre tu idea, menciona si el proyecto es una landing page, e-commerce o algo distinto. Con ello, podremos coordinar una reunion para hablar más a detalle del proyecto.
+                    </p>
+                    <div class="social-buttons">
+                        <a href="https://github.com/DSeV0/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">GitHub</a>
+                        <a href="https://www.instagram.com/matias_menares_dev/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Instagram</a>
+                        <a href="https://www.linkedin.com/in/matias-menares-dev/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form action="https://formspree.io/f/TU_ID_AQUI" method="POST" class="contact-form">
+                        
+                        <div class="form-row">
+                            <input type="text" name="nombre" placeholder="Nombre" required aria-label="Nombre">
+                            <input type="email" name="email" placeholder="E-Mail" required aria-label="Correo electrónico">
+                        </div>
+                        
+                        <input type="text" name="tipo_proyecto" placeholder="Tipo de Proyecto" aria-label="Tipo de proyecto">
+                        
+                        <textarea name="mensaje" placeholder="Mensaje?" rows="8" required aria-label="Mensaje"></textarea>
+                        
+                        <button type="submit" class="btn btn-primary submit-btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a href="https://github.com/DSeV0/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/matias-menares-dev/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </footer>
+
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
