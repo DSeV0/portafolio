@@ -68,6 +68,101 @@ a {
     color: var(--primary-color);
 }
 
+/* --- Menú Hamburguesa (Oculto por defecto en Desktop) --- */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000; /* Asegura que el botón esté siempre por encima */
+}
+
+/* Construcción de las 3 líneas de la hamburguesa */
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: var(--primary-color); /* Tu color verde */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    border-radius: 2px;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { top: 8px; }
+
+/* Animación de la hamburguesa transformándose en una "X" */
+.menu-toggle.is-active .hamburger { background-color: transparent; }
+.menu-toggle.is-active .hamburger::before { transform: translateY(8px) rotate(45deg); }
+.menu-toggle.is-active .hamburger::after { transform: translateY(-8px) rotate(-45deg); }
+
+/* --- Responsive Header (Móviles y Tablets) --- */
+@media (max-width: 900px) {
+    .site-header {
+        position: relative; /* Clave para que el menú se posicione debajo de este header */
+    }
+
+    .menu-toggle {
+        display: block; /* Mostramos la hamburguesa */
+    }
+
+    /* Estilos del menú oculto */
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-bg); /* Fondo azul noche para el dropdown */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+        
+        /* Ocultamos visualmente pero con transiciones suaves */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-15px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        z-index: 999;
+    }
+
+    /* Reestructuración de la lista para formato vertical */
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0;
+        padding: 20px 0;
+    }
+
+    .main-nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 15px 20px;
+    }
+
+    /* Clase activa que se agregará con JavaScript para mostrar el menú */
+    .main-nav.is-open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+
 /* --- Sección Hero --- */
 .hero-section {
     display: flex;
@@ -294,6 +389,297 @@ a {
         grid-template-columns: 1fr; /* Pasa a 1 columna en pantallas pequeñas */
     }
 }
+
+@media (max-width: 900px) {
+    /* Apilamos los elementos verticalmente */
+    .hero-section {
+        flex-direction: column; 
+        gap: 40px; /* Reducimos el espacio entre imagen y texto */
+        text-align: center; /* Centramos el texto para que se vea mejor en móvil */
+        padding: 40px 20px;
+    }
+
+    /* Hacemos la imagen fluida */
+    .hero-image {
+        width: 100%; /* Permite que se encoja al tamaño de la pantalla */
+        max-width: 500px; /* Pero que no supere los 500px en tablets */
+        height: auto; /* Quitamos la altura fija estricta... */
+        aspect-ratio: 5 / 4; /* ...y usamos la proporción para que no pierda su forma */
+    }
+
+    /* Centramos los botones para que coincidan con el texto */
+    .hero-buttons {
+        justify-content: center; 
+    }
+}
+
+
+
+/* --- Sección Sobre Mí --- */
+
+/* Cabecera del título SOBRE MÍ */
+.about-header {
+    margin-top: 60px; /* Espacio desde la barra de navegación */
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Subtítulo ajustado para la presentación */
+.about-subtitle {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* --- Sección: Como Empezó --- */
+.history-section {
+    padding: 60px 20px;
+}
+
+/* El contenedor es la clave: esto fuerza a que haya 2 columnas */
+.history-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide el espacio en 2 mitades iguales */
+    gap: 40px; /* Separación entre las dos imágenes */
+    max-width: 1000px; /* Evita que crezcan infinitamente en pantallas gigantes */
+    margin: 0 auto; /* Centra el contenedor en la pantalla */
+}
+
+/* Estilo de cada imagen individual */
+.history-img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* Las mantiene cuadradas perfectas */
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* --- Sección: Fuera de lo Profesional --- */
+.personal-section {
+    padding: 60px 20px 100px 20px;
+}
+
+/* Limita el ancho de la imagen para que no tome toda la pantalla */
+.personal-image-container {
+    max-width: 800px; 
+    margin: 0 auto; /* Centra la imagen */
+}
+
+.personal-img {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* La mantiene en formato horizontal (panorámico) */
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+
+.section-description {
+    max-width: 800px; 
+    margin: 0 auto 40px auto; 
+    color: var(--text-muted);
+    font-size: 24px; /* <--- Forzamos el tamaño a 24px */
+    line-height: 1.5; /* Ajuste de interlineado para mejor legibilidad en textos grandes */
+}
+
+
+
+/* --- Responsive adicional  --- */
+@media (max-width: 768px) {
+    .history-grid {
+        grid-template-columns: 1fr; /* En pantallas pequeñas, pasa a 1 sola columna hacia abajo */
+    }
+}
+
+
+
+
+
+/* --- Sección Proyectos --- */
+
+/* --- Página Proyectos --- */
+
+.page-intro {
+    margin-top: 60px;
+}
+
+.category-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+/* --- Carrusel Destacados --- */
+.carousel-section {
+    padding: 40px 20px 20px 20px;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto; /* Permite el scroll horizontal */
+    scroll-snap-type: x mandatory; /* Activa el efecto de imán */
+    gap: 30px;
+    padding-bottom: 20px; /* Espacio para la barra de scroll nativa */
+    
+    /* Oculta la barra de scroll en navegadores Webkit (Chrome, Safari) para que se vea más limpio */
+    scrollbar-width: none; 
+}
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    flex: 0 0 60%; /* Cada ítem ocupa el 60% del ancho, dejando ver los bordes de los otros */
+    scroll-snap-align: center; /* El elemento se centra al terminar de hacer scroll */
+    transition: transform 0.3s ease;
+}
+
+.carousel-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Placeholder para elementos del carrusel sin imagen */
+.placeholder-box.tall {
+    aspect-ratio: 9 / 16; /* Formato vertical tipo móvil */
+}
+
+/* --- Cuadrícula de Categorías (UX/UI) --- */
+.category-section {
+    padding: 0 20px 80px 20px;
+}
+/* --- Controles del Carrusel --- */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-color);
+    color: var(--bg-color); /* Color oscuro para la flecha */
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-control:hover {
+    opacity: 0.8;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* Posiciones exactas */
+.carousel-control.prev {
+    left: -15px;
+}
+
+.carousel-control.next {
+    right: -15px;
+}
+
+/* Ocultamos las flechas en móviles, ya que el usuario puede deslizar con el dedo (swipe) */
+@media (max-width: 900px) {
+    .carousel-control {
+        display: none;
+    }
+}
+
+/* Flexbox para alinear el título y el enlace de "Ver todos" */
+.category-header {
+    display: flex;
+    justify-content: space-between; /* Título a la izquierda, enlace a la derecha */
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* Estilo para el enlace a la página de categoría */
+.link-ver-mas {
+    font-size: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+.link-ver-mas:hover {
+    opacity: 0.8;
+}
+
+/* Cuadrícula de 3 columnas */
+.projects-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-bg); /* #0A193B */
+    border-radius: 8px;
+    padding-bottom: 30px; /* Espacio inferior para el botón */
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* --- Responsive Proyectos --- */
+@media (max-width: 900px) {
+    .projects-grid-3 {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+    
+    .carousel-item {
+        flex: 0 0 85%; /* En móvil, el ítem principal ocupa casi toda la pantalla */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* --- Footer --- */
