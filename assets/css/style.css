@@ -3,12 +3,12 @@
     --bg-color: #0F172A;
     --primary-color: #97E028;
     --text-light: #FFFFFF;
-    --text-muted: #CBD5E1; /* Gris claro para los párrafos */
-    --card-bg: #0A193B; /* Un tono ligeramente más claro para las tarjetas de tecnologías */
+    --text-muted: #CBD5E1; 
+    --card-bg: #0A193B; 
     --btn-secondary-bg: #E2E8F0;
     --btn-secondary-text: #0F172A;
     
-    --font-main: system-ui, -apple-system, sans-serif; /* Puedes cambiarla por la fuente de Google Fonts que estés usando */
+    --font-main: system-ui, -apple-system, sans-serif; 
 }
 
 /* --- Reset y Estilos Base --- */
@@ -42,7 +42,7 @@ a {
 /* --- Header y Navegación --- */
 .site-header {
     padding: 20px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Línea sutil como en el diseño */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
 }
 
 .header-content {
@@ -85,7 +85,7 @@ a {
     display: block;
     width: 30px;
     height: 3px;
-    background-color: var(--primary-color); /* Tu color verde */
+    background-color: var(--primary-color); 
     transition: transform 0.3s ease, background-color 0.3s ease;
     position: relative;
     border-radius: 2px;
@@ -113,7 +113,7 @@ a {
     }
 
     .menu-toggle {
-        display: block; /* Mostramos la hamburguesa */
+        display: block; 
     }
 
     /* Estilos del menú oculto */
@@ -122,8 +122,8 @@ a {
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--card-bg); /* Fondo azul noche para el dropdown */
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+        background-color: var(--card-bg); 
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
         
         /* Ocultamos visualmente pero con transiciones suaves */
         opacity: 0;
@@ -255,11 +255,11 @@ a {
 
 /* --- Sección Tecnologías --- */
 .tech-section {
-    padding: 80px 20px; /* Margen superior e inferior para separar del Hero */
+    padding: 80px 20px; 
 }
 
 .section-title {
-    font-size: 32px; /* Un poco más pequeño que tu nombre (H1) para mantener jerarquía */
+    font-size: 32px; 
     margin-bottom: 40px;
     font-weight: 600;
     text-align: center;
@@ -268,8 +268,8 @@ a {
 /* Contenedor principal de las dos tarjetas */
 .tech-cards-container {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas del mismo ancho */
-    gap: 40px; /* Espacio entre las tarjetas */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
 }
 
 /* Estilo individual de cada tarjeta oscura */
