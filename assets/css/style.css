@@ -995,9 +995,9 @@ a {
 /* Navegación de Pestañas */
 .tab-nav {
     display: flex;
+    flex-wrap: wrap; /* Permite que las pestañas bajen a una nueva línea si no caben */
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    overflow-x: auto; /* Permite scroll horizontal en móviles */
-    scrollbar-width: none;
+    gap: 5px; /* Pequeño espacio en caso de que pasen a la segunda línea */
 }
 
 .tab-nav::-webkit-scrollbar {
@@ -1005,6 +1005,7 @@ a {
 }
 
 .tab-btn {
+    flex-grow: 1; /* Hace que los botones se estiren para ocupar el espacio sobrante de forma pareja */
     background: transparent;
     border: none;
     color: var(--text-muted);
@@ -1016,6 +1017,7 @@ a {
     white-space: nowrap;
     border-bottom: 3px solid transparent;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
 .tab-btn:hover {
