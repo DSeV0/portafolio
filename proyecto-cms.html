@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso de Estudio | Matías Menares</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header Global de Matías -->
+    <header class="site-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">Matías Menares</a>
+            </div>
+            
+            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav id="primary-menu" class="main-nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre-mi.html">Sobre Mi</a></li>
+                    <li><a href="proyectos.html">Proyectos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container tabbed-project-section">
+            
+            <!-- HEADER DEL PROYECTO -->
+            <header class="project-hero">
+                <h1 class="project-title-large">AndreCicla E-Commerce</h1>
+                <p class="project-desc-large">
+                    Desarrollo integral de una plataforma de comercio electrónico. El enfoque principal fue construir un flujo de compra intuitivo que a la vez transmitiera la misión de dar una nueva vida a los objetos a través del reciclaje.
+                </p>
+
+                <!-- NUEVA FORMA DE MOSTRAR EL STACK TÉCNICO -->
+                <div class="hero-tech-stack">
+                    <span class="tech-pill">HTML5</span>
+                    <span class="tech-pill">CSS3</span>
+                    <span class="tech-pill">Bootstrap</span>
+                    <span class="tech-pill">WordPress</span>
+                    <span class="tech-pill">WooCommerce</span>
+                </div>
+
+                <div class="project-actions">
+                    <a href="proyectos.html" class="btn btn-secondary">← Volver Atrás</a>
+                    <a href="#" class="btn btn-primary">Visitar Sitio</a>
+                </div>
+            </header>
+
+            <!-- CONTENEDOR DE PESTAÑAS -->
+            <div class="tab-interface">
+                
+                <!-- Navegación de las pestañas -->
+                <nav class="tab-nav">
+                    <button class="tab-btn active" data-target="tab-cliente">01 // Datos del cliente</button>
+                    <button class="tab-btn" data-target="tab-analisis">02 // Análisis</button>
+                    <button class="tab-btn" data-target="tab-hallazgos">03 // Hallazgos</button>
+                    <button class="tab-btn" data-target="tab-creativo">04 // Proceso creativo</button>
+                    <button class="tab-btn" data-target="tab-identidad">05 // Identidad Visual</button>
+                    <button class="tab-btn" data-target="tab-producto">06 // Producto final</button>
+                </nav>
+
+                <!-- Contenido de las pestañas -->
+                <div class="tab-content-wrapper">
+                    
+                    <!-- Pestaña 1: Cliente -->
+                    <div class="tab-panel active" id="tab-cliente">
+                        <div class="panel-split">
+                            <div class="panel-text">
+                                <h2>El Cliente</h2>
+                                <p>Emprendedora dedicada a la creación de artesanías y decoraciones. La necesidad principal era establecer un canal de ventas digital propio que permitiera gestionar su inventario y destacar la personalidad de la marca, muy enfocada en la reutilización de materiales.</p>
+                            </div>
+                            <div class="panel-img">
+                                <img src="assets/img/proyectos/andrecicla.png" alt="Contexto del cliente AndreCicla">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pestaña 2: Análisis -->
+                    <div class="tab-panel" id="tab-analisis">
+                        <div class="panel-split">
+                            <div class="panel-text">
+                                <h2>Análisis del Problema</h2>
+                                <p>Se evaluaron las limitaciones tecnológicas previas. Se requería una infraestructura CMS que soportara pasarelas de pago y gestión de envíos, manteniendo una interfaz de administración lo suficientemente sencilla para que el cliente pudiera gestionar todo sin depender de código.</p>
+                            </div>
+                            <div class="panel-img">
+                                <img src="assets/img/proyectos/andrecicla.png" alt="Análisis del proyecto">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pestaña 3: Hallazgos -->
+                    <div class="tab-panel" id="tab-hallazgos">
+                        <div class="panel-text full-width">
+                            <h2>Principales Hallazgos</h2>
+                            <ul class="cs-results-list">
+                                <li>El catálogo requería categorización dinámica basada en el tipo de material reciclado.</li>
+                                <li>La velocidad de carga de las imágenes de producto afectaba la retención en dispositivos móviles.</li>
+                                <li>Era estrictamente necesario implementar estándares de accesibilidad universal para asegurar que el proceso de checkout fuera inclusivo y programáticamente claro.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Pestaña 4: Proceso Creativo (Wireframes) -->
+                    <div class="tab-panel" id="tab-creativo">
+                        <div class="panel-text full-width">
+                            <h2>Wireframes y Estructura</h2>
+                            <p>Desarrollo de bocetos estructurales enfocados en la experiencia de usuario (UX).</p>
+                            <div class="cs-images-grid">
+                                <img src="assets/img/proyectos/andrecicla.png" alt="Wireframe 1" class="placeholder-box"> 
+                                <img src="assets/img/proyectos/andrecicla.png" alt="Wireframe 2" class="placeholder-box">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pestaña 5: Identidad Visual -->
+                    <div class="tab-panel" id="tab-identidad">
+                        <div class="panel-text full-width">
+                            <h2>Identidad y UI</h2>
+                            <p>Se consolidó una guía de estilos que respetara el enfoque "Eco", utilizando tipografías legibles y una paleta de colores coherente con la naturaleza, enfatizando la idea central de dar una nueva vida a los objetos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Pestaña 6: Producto Final -->
+                    <div class="tab-panel" id="tab-producto">
+                        <div class="panel-text full-width text-center">
+                            <h2>Despliegue Final</h2>
+                            <img src="assets/img/proyectos/andrecicla.png" alt="Producto final de AndreCicla" style="width:100%; border-radius:8px; margin-top:20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Global de Matías -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <a href="https://github.com/DSeV0/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/matias-menares-dev/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

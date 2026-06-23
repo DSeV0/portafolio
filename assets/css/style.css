@@ -773,10 +773,351 @@ a {
 
 
 
+/* --- Página Interna de Categoria --- */
+.category-list-section {
+    padding: 20px 20px 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 80px; /* Separación amplia entre cada proyecto, como en el diseño */
+}
+
+.project-row {
+    display: flex;
+    align-items: center; /* Centra verticalmente la imagen y el texto */
+    gap: 50px;
+}
+
+/* Control del ancho de las columnas */
+.project-row-image {
+    flex: 1.2; /* Le da un poco más de espacio a la imagen (aprox 55%) */
+}
+
+.project-row-content {
+    flex: 1; /* El texto ocupa el resto del espacio (aprox 45%) */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el contenido (incluyendo el botón) a la izquierda */
+}
+
+/* Estilos de la imagen en formato horizontal */
+.project-row-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Formato panorámico ideal para capturas de pantalla web */
+    object-fit: cover;
+    object-position: top; /* Si la imagen es muy larga, muestra la parte superior (header) */
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra sutil para despegarla del fondo */
+}
+
+/* Textos de la fila */
+.project-row-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.project-row-text {
+    font-size: 20px; /* Mantenemos el tamaño secundario de lectura */
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* --- Responsive para las filas de proyectos --- */
+@media (max-width: 900px) {
+    .project-row {
+        flex-direction: column; /* Apila imagen arriba, texto abajo */
+        gap: 30px;
+    }
+    
+    .project-row-content {
+        align-items: center; /* Centra el texto y botón en móvil */
+        text-align: center;
+    }
+}
+/* --- Botón Volver Atrás --- */
+.back-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* Espacio extra debajo del último proyecto */
+    width: 100%;
+}
+
+
+/* --- Página Interna de Producto --- */
+.project-detail-section {
+    display: flex;
+    gap: 60px;
+    padding: 60px 20px 100px 20px;
+    align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+}
+
+/* Columna Izquierda */
+.project-info-column {
+    flex: 1; /* Ocupa el 50% del espacio disponible */
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Separación constante entre título, texto, caja oscura y botón */
+}
+
+.project-title {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.project-description {
+    font-size: 20px; /* Tamaño adecuado para lectura fluida de párrafos largos */
+    line-height: 1.6;
+    color: var(--text-light); /* En tu diseño se ve blanco, no gris (muted) */
+}
+
+/* Caja de lenguajes/tecnologías */
+.tech-stack-card {
+    background-color: var(--card-bg); /* Reutiliza el #0A193B */
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+}
+
+.tech-stack-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.tech-icons-row {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.tech-icons-row img {
+    width: 50px; /* Tamaño más contenido para los iconos internos */
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.tech-icons-row img:hover {
+    transform: translateY(-5px);
+}
+
+/* Alineación del botón */
+.project-action {
+    align-self: flex-start; /* Evita que el botón se estire a todo lo ancho de la columna */
+}
+
+/* Columna Derecha (Imagen) */
+.project-image-column {
+    flex: 1; /* Ocupa el otro 50% del espacio */
+}
+
+.project-image-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+/* --- Responsive para Proyecto Individual --- */
+@media (max-width: 900px) {
+    .project-detail-section {
+        flex-direction: column; /* Apila la información arriba y la imagen abajo */
+        gap: 50px;
+    }
+
+    .project-action {
+        align-self: center; /* Centra el botón en móviles */
+    }
+}
 
 
 
 
+
+
+
+/* --- Página de Proyecto --- */
+
+
+/* --- Caso de Estudio: Interfaz por Pestañas --- */
+.tabbed-project-section {
+    padding: 60px 20px 100px 20px;
+    max-width: 1000px; /* Limitamos el ancho para que la lectura sea cómoda */
+    margin: 0 auto;
+}
+
+/* Header del Proyecto */
+.project-hero {
+    margin-bottom: 60px;
+}
+
+.sys-label {
+    color: var(--primary-color);
+    font-family: monospace;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.project-title-large {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.1;
+}
+
+.project-desc-large {
+    font-size: 22px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+.project-actions {
+    display: flex;
+    gap: 20px;
+}
+
+/* Contenedor Principal de Pestañas */
+.tab-interface {
+    background-color: var(--card-bg); /* Fondo de la tarjeta gigante */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+}
+
+/* Navegación de Pestañas */
+.tab-nav {
+    display: flex;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    overflow-x: auto; /* Permite scroll horizontal en móviles */
+    scrollbar-width: none;
+}
+
+.tab-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-family: monospace;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 20px 25px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--text-light);
+}
+
+.tab-btn.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+    background-color: rgba(151, 224, 40, 0.05); /* Brillo sutil */
+}
+
+/* Contenido de las Pestañas */
+.tab-content-wrapper {
+    padding: 40px;
+}
+
+.tab-panel {
+    display: none; /* Oculta todas las pestañas por defecto */
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-panel.active {
+    display: block; /* Muestra solo la activa */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Layouts internos de las pestañas */
+.panel-split {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.panel-text {
+    flex: 1;
+}
+
+.panel-text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.panel-text p {
+    font-size: 20px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.panel-img {
+    flex: 1;
+}
+
+.panel-img img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.hero-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.tech-pill {
+    background-color: rgba(151, 224, 40, 0.1); /* Fondo verde semitransparente usando tu --primary-color */
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-family: monospace;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.tech-pill:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-color); /* Cambia al color oscuro del fondo */
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .project-title-large { font-size: 36px; }
+    
+    .panel-split {
+        flex-direction: column;
+    }
+    .tab-content-wrapper {
+        padding: 20px;
+    }
+}
 
 
 

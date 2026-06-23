@@ -44,3 +44,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+
+// script pagian de proyecto
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // ... tu código anterior del menú móvil y el carrusel ...
+
+    // --- Lógica de las Pestañas (Tabs) ---
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    if (tabBtns.length > 0 && tabPanels.length > 0) {
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // 1. Quitar la clase 'active' de todos los botones y paneles
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabPanels.forEach(p => p.classList.remove('active'));
+
+                // 2. Agregar la clase 'active' al botón clickeado
+                btn.classList.add('active');
+
+                // 3. Obtener el ID del panel objetivo desde el data-target y mostrarlo
+                const targetId = btn.getAttribute('data-target');
+                const targetPanel = document.getElementById(targetId);
+                
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            });
+        });
+    }
+});
