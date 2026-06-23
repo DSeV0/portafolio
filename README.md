@@ -1,1 +1,1 @@
-Test de cosas, no tomar en cuenta nada de lo publicado xd
+Diseño Inicial de mi portafolio, no cuenta con imagenes 100% reales ni todas las funcionalidades
